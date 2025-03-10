@@ -1,0 +1,53 @@
+﻿Solution;EPICS;Features;ID;Functional/Technical;Title User Story;User Story Description;Priority (1:MVP, 2: Should Have, 3 : Nice to Have);Business Value (1,2,3);T-Shirt Size;Responsible (YYYY/XXXX);Acceptance criteria;Assemptions;XXXX Prerequisites;CIAM impact;Requires Dynamics for Marketing;Requires PowerBI;Requires Azure Blob Storage;Requires AppInsight;YYYY Status (poc/ready/not ready);YYYY Comments;XXXX IT Status (ready/not ready);XXXX IT Comment;XXXX Business Status (ready/not ready);XXXX Business Comment;Status (Approved / Rejected) ;Status Comment
+CRM;Service Request;Support Ticket Creation;US.0035;Functional;Redirection to the support ticket creation;As a Client Coworker I WANT TO be able to choose an option to create a support ticket SO THAT I could quickly access the ticket creation page in the portal. ;MVP;1;XS;YYYY;.The user should be redirected to the the ticket creation page in the portal.  ;;;;;;;;;;;;;;;
+Portal;Service Request;Case creation;US.0038;Functional;Create a support request from the CRM;As a XXXX Employee, I WANT TO create a support request from the CRM SO THAT I will be able to create a ticket.;MVP;1;XS;YYYY;". Don't have the possibility to change the nature of the request (read only and be masked) 
+. ""Nature"" field should be empty and read only when case is created from CRM";;;;;;;;;Should pay attention to import with an excel file;;;;;;Should pay attention to import with an excel file
+Portal;Service Request;Case creation;US.0039;Functional;Create a ticket Support request from the portal;As a XXXX Employee or a Client coworker, I NEED TO create Support request ticket SO THAT I will be able to provided the information needed for my case.;MVP;1;S;;". The user will be able to specify the type of support request he needs : Instrument & Hardware, Application reagent & scientific, Software/Phoresis/Connectivity, Other
+.The user must have a clear definition in the portal for the usage of each category ( i : information ; ie : For any interpretation request please select KNC  )
+'.Auto filled the connected user (First name - Last name -Email - Function - Phone number -
+.Account fields related to the account are: Customer name,X3 number- address (text street - postal code - city - country))
+
+For Instrument & Hardware/Software/Phoresis/Connectivity : 
+
+.The fields are serial number, product code of the instrument. 
+.Details of the request : Case title, case subject (Instrument & Hardware/Software/Phoresis/Connectivity), case type (Information request, Technical support request, Interpretation Request, Other), case description, severity (Faulty instrument - No repair,Faulty instrument - To repair, Instrument in use working – Impacts to consider, Instrument in use and working – No operational impacts)
+
+For KNC : 
+Possibility to select one or several techniques used on the instruments(Proteins, IT,IF,Urine,FLC,Hemoglobin,HbA1c,CDT,CSF,Others)
+.Details of the request: Case title, case subject,case type,case description, severity (default value), KIT Lot number, KIT Name.
+
+For Other: Request for documentation from XXXX
+
+There is a possibility to create an account or a contact if they are not in the CRM.
+
+'. Before submitted the case,  I have to checked the section that says ""Yes I approved the XXXX process for a support request"" ";;;;;;;;;Need to know where do we need to add these three buttons;;;;;;Need to know where do we need to add these three buttons
+CRM;Service Request;Case creation;US.0040;Functional;Routing a Support request ticket;As a system, I WANT TO route a Support request ticket to appropriate queue SO THAT the appropriate team will be able to handle the case;MVP;1;XS;YYYY;".if the subject equals Instrument & Hardware so route to  queue equals GIS
+.if the subject equals Software / Phoresis / Connectivity so route to  queue equals GIS
+.if the subject equals Application, Reagent & Scientific so route to  queue equals KNC
+. if Other subject is selected , so route to queue equals GIS  ";;;;;;;;;;;;;;;
+Portal;Service Request;Case creation;US.0041;Functional;Create a ticket RGA;As a Client coworker, I NEED TO create RGA ticket SO THAT I will be able to provided the information needed for my case.;MVP;1;XS;YYYY;".Auto filled the connected user (First name - last name -Email - Function -Phone number)
+.The form will contain these fields : Original part (from the instrument or New part from stock),  XXXX part number (lookup product filtered on categories), Item description (lookup product), Item serial number/WO (lookup asset ?), Failure description (multiline), attachment, decontamination: picklist values (N/A, NO,YES) 
+.I can visualise the related categories : SACCE, ECO, ECP, EPF,ESE,SILAB,SPORG,SPERI
+'. Before submitted the case,  I have to checked the section that says ""Yes I approved the XXXX process for a support request"" 
+";;;;;;;;;;;;;;;
+CRM;Service Request;Case creation;US.0042;Functional;Routing a RGA ticket;As a system, I WANT TO route a RGA ticket to appropriate queue SO THAT the appropriate team will be able to handle the case;MVP;1;XXS;YYYY;.if the subject equals Instrument & Hardware so route to  queue equals GIS;;;;;;;;;;;;;;;
+CRM;Service Request;Case creation;US.0043;Functional;Create a ticket DOA  ;As a Client coworker, I NEED TO create DOA ticket SO THAT I will be able to provided the information needed for my case.;MVP;1;XS;YYYY;".Auto filled the connected user (First name - last name -Email - Function -Phone number)
+.The form will contain these fields : Original part (from the instrument or New part from stock),  XXXX part number (lookup product filtered on categories), Item description (lookup product), Item serial number/WO (lookup asset ?), Failure description (multiline), attachment, decontamination: picklist values (N/A, NO,YES) 
+
+'. Before submitted the case,  I have to checked the section that says ""Yes I approved the XXXX process for a support request"" ";;;;;;;;;Do we have categories for DOA request ? Do we use the same fields as RGA request ?;;;;;;Do we have categories for DOA request ? Do we use the same fields as RGA request ?
+Portal;Service Request;Case creation;US.0044;Functional;Routing a DOA ticket;As a system, I WANT TO route a DOA ticket to appropriate queue SO THAT the appropriate team will be able to handle the case;MVP;1;XXS;YYYY;.if the subject equals Instrument & Hardware so route to  queue equals GIS;;;;;;;;;;;;;;;
+Portal;Service Request;Case Follow up;US.0045;Functional;Case Follow up from portal;As a Client coworker, I WANT TO see my created cases on the portal SO THAT I will be able to review all the existing cases ;MVP;1;S;YYYY;". Review all the existing cases by status : closed (solved), cancelled, open or in progress.
+.Can filter the cases by status date, asset (serial number)
+. I will be notified by email with the case number when I create a case";;;;;;;;;;;;;;;
+CRM;Service Request;Case creation ;US.0046;Functional;Attachment for a case;As a Client coworker , I WANT TO add attachments to a case SO THAT I will be able to provide details information inside the creation of my case.  ;MVP;1;M;YYYY;". Don't be use as a collaborative way
+.The attachment types can be : Zip/Rar/Jpeg/Png/Tif/Pdf/Txt/Doc/Xls. 
+.Videos must be downloadable as well.  
+.Attachment’s size must go up then 300 Mb.
+.This attachment needs to be associated to the case created in the CRM  
+. attachement will be stored in Sharepoint or azure blob storage";;;;;;;;;;;;;;;
+CRM;Service Request;Case attachments;US.0047;Functional;Attachment for a case;As a Client Coworker, i need to see all attachments shared by XXXX employee related to my case ;MVP;1;M;YYYY;.On case's form on portal, I can read all case's attached files event those added by XXXX employees ;"Azure Blob Storage is used to store Case attachment files
+Portal User (internal and external) is given access to file on Azure Blob Storage temporarily each time the user wants to read attachment file in the portal";;;;;;;;;;;;;;
+CRM;Service Request;Case attachments;US.0048;Functional;Attachment for a case;"As XXXX employee, i need to be able to share documentation to user portal 
+";MVP;1;XS;YYYY;. On case's form (in model-driven app (CRM) and in portal) I can read all case's attached files  even those added by Client coworkers ;"Azure Blob Storage is used to store Case attachment files
+Portal User (internal and external) is given access to file on Azure Blob Storage temporarily each time the user wants to read attachment file in the portal";;;;;;;;;;;;;;
+Portal;Service Request;Case attachments;US.0049;Functional;Attachement clean up;As a system i need to delete all the attachement for cases closed X last Months ;MVP;1;S;YYYY;. On case's form (in model-driven app (CRM) and in portal), user cannot find any attached file that has been created befor X last months;;;;;;;;;;;;;;;
